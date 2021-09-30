@@ -11,7 +11,7 @@ from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.layers import Flatten, Dense, Dropout, Conv2D, BatchNormalization, MaxPool2D ,Activation, MaxPooling2D
 from ann_visualizer.visualize import ann_viz
 from tensorflow.keras.applications.resnet_v2 import ResNet50V2
-
+from tensorflow.keras import backend as K
    
 def build_cnn_model():    
 
@@ -93,7 +93,9 @@ ann_viz(model, title="GTBR")
 
 #only the first model can be visualized!
 
+#clear sessions
 
+K.clear_session()
 
 
 
