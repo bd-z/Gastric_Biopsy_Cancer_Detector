@@ -12,7 +12,7 @@ The data are images of stomach biopsy slices from the [2017 Data Science Competi
 
 ## Model 1 -- simple CNN
 
-Step 1, a simple CNN model was built. with ann_visualizer the visualization is as following(Green button: activation layer with Relu, Purple button:  max pooling, Yellow button: drop out, Black triangle: flattening). The accuracy of the trained Model 1 on test data is 0.5475.
+A simple CNN model was built. With ann_visualizer the visualization of this CNN simplified as following:(Green button: activation layer with Relu, Purple button:  max pooling, Yellow button: drop out, Black triangle: flattening) The accuracy of the trained Model 1 on test data is 0.5475.
 
 ![image](https://github.com/bd-z/Gastric_Biopsy_Cancer_Detector/blob/main/static/asset/cnn_model.png)
 
