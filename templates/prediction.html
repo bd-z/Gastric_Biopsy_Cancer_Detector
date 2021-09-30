@@ -1,0 +1,87 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="static/assets/favicon.ico" crossorigin="anonymous" />   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/custom.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script type="text/javascript" src="static/js/classes.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+    <title>GTBR</title>
+  </head>
+  <body onload="loadModel()">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+              <div class="card-img-left d-none d-md-flex">
+               </div>
+              <div class="card-body">
+                  <h5 class="card-title text-center font-weight-bold">GTBR PREDICTION</h5>
+                  <div class="mx-auto" style="width: 350px;"><img src="/static/asset/tissue.jpeg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="row">                    
+                  <br> <b style="color: #000000; font-size: 15px;"> 
+                  Attention : </b>  Results are for reference only!  (1.00=cancer  0.00=non cancer) :<br>
+                </div>
+                <hr>
+                <div class="row">                  
+                  <b style="color: #000000; font-size: 15px;"> The possibility that cancer cells exist is : {{ pred }}. </b> 
+                </div>                
+                 <div id="progress-box" style="display: none; text-align: center;">
+                  <img src="static/assets/loading.gif" id="model-load" width="50px" />
+                  <p style="color: black; font-size: small;">Loading model...</p>
+                </div>
+                  <hr>
+                  <div class="row" style="display: none;" id="output-row">
+
+                    <div class="col">
+                      <div class="out-box" id="test-image-box" style="display: none;">
+                        <br />
+                        <img id='test-image' style="max-width: 300px; max-height: 250px"/>
+                        <p id="prediction"></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <br />
+                      <div id="progress-prediction" style="display: none; text-align: center;">
+                        <img src="static/assets/loading.gif" width="50px" />
+                      </div>
+                      <div class="out-box" id="predict-box" style="display: none;">
+                        <p><b style="color: #000000; font-size: 15px;">Top-5 Predictions</b></p>
+                        <ul id="predict-list">
+                        </ul>
+                      </div>
+                    </div>
+                  </div>                  
+                  <br />
+                  <div class="row">                   
+                    <div class="col-6">
+                      <a class="btn btn-sm btn btn-outline-secondary btn-block text-uppercase" href="/upload2" role="button">LOAD-IMAGE</a>
+                    </div>
+                    <div class="col-6">
+                      <a class="btn btn-sm btn btn-outline-secondary btn-block text-uppercase" href="/" role="button">MAIN-PAGE</a>
+                    </div>                    
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-6">
+                      <a class="btn btn-sm btn btn-outline-secondary btn-block text-uppercase" href="https://github.com/bd-z" role="button">CONTACT</a>
+                    </div>
+                    <div class="col-6">
+                      <a class="btn btn-sm btn btn-outline-secondary btn-block text-uppercase" href="https://www.cancerimagingarchive.net/" role="button">TCIA</a>
+                    </div>
+                  </div>
+                  <br>                  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </body>
+      </html>
+
+

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+    <link rel="shortcut icon" href="static/assets/favicon.ico" crossorigin="anonymous" />    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/custom.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script type="text/javascript" src="static/js/classes.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+    <title>GASTRIC</title>
+    <script>
+      function setup() {
+          document.getElementById('buttonid').addEventListener('click', openDialog);
+          function openDialog() {
+              document.getElementById('fileid').click();
+          }
+          document.getElementById('fileid').addEventListener('change', submitForm);
+          function submitForm() {
+              document.getElementById('formid').submit();
+          }
+      }
+  </script> 
+  </head>
+  <body onload="loadModel()">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+              <div class="card-img-left d-none d-md-flex">              
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center font-weight-bold">GTBR</h5>
+                <div class="mx-auto" style="width: 350px;"><img src="/static/asset/labo.jpeg" class="img-fluid" alt="...">
+                </div>
+                <div class="row">
+                  Welcome to Gastric Tissue Biopsy Robot(GBTR), an AI-driven pathologist!
+                  <br>
+                  Please upload an image of your gastric tissue slide.<br>
+                </div>
+                <hr>
+                <div class="row">
+                  <b style="color: #000000; font-size: 15px;">Attention :</b> The evaluation results are for reference only.
+                </div>
+                <div id="progress-box" style="display: none; text-align: center;">
+                  <img src="static/assets/loading.gif" id="model-load" width="50px" />
+                  <p style="color: black; font-size: small;">Loading model...</p>
+                </div>
+                  <hr>
+                  <div class="row">                    
+                  </div>
+                  <form action="/getImg/" enctype="multipart/form-data" method="post" > 
+                    <!-- # action: when submit the form, the data will be submited to "getImg" file or function -->                    
+                    <label for="image">Some Text</label>
+                    <input type="file" name="image" value="upload"/>
+                     <!-- here will be a dictionary, the image is the key, value will be the image -->
+                     <input type="submit" value="submit" >
+                 </form>
+                  <div class="row" style="display: none;" id="output-row">
+                    <div class="col">
+                      <div class="out-box" id="test-image-box" style="display: none;">
+                        <br />
+                        <img id='test-image' style="max-width: 300px; max-height: 250px"/>
+                        <p id="prediction"></p>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <br />
+                      <div id="progress-prediction" style="display: none; text-align: center;">
+                        <img src="static/assets/loading.gif" width="50px" />
+                      </div>
+                      <div class="out-box" id="predict-box" style="display: none;">
+                        <p><b style="color: #000000; font-size: 15px;">Top-5 Predictions</b></p>
+                        <ul id="predict-list">
+                        </ul>
+                      </div>
+                    </div>
+                  </div>                 
+                  <hr>        
+                    <div class="row">
+                      <div class="col-6">
+                        <a class="btn btn-sm btn btn-outline-secondary btn-block text-uppercase" href="https://github.com/bd-z" role="button">CONTACT</a>
+                      </div>
+                      <div class="col-6">
+                        <a class="btn btn-sm btn btn-outline-secondary btn-block text-uppercase" href="https://www.cancerimagingarchive.net/" role="button">TCIA</a>
+                      </div>
+                    </div>
+                    <br>
+                   </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </body>
+        </html>

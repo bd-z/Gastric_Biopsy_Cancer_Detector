@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>logged in </title>
+</head>
+<body>
+    <p>Please load new picture{{username}}</p>
+    <form action="/getImg/" enctype="multipart/form-data" method="post" > 
+        <!-- # action: when submit the form, the data will be submited to "getImg" file or function -->
+         <input type="file" name="image" />
+         <!-- here will be a dictionary, the image is the key, value will be the image -->
+         <input type="submit" value="submit" >
+     </form>
+ </body>
+</html>
+
+
+
+
